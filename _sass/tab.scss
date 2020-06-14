@@ -1,0 +1,45 @@
+/* TABS */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+
+  button {
+    background:none;
+    font-size:13px;
+    float: left;
+    border:0;
+    border-bottom: 2px solid #aaa;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 26px;
+    transition: 0.3s;
+    color: #c5c5c5;
+  }
+
+  /* Change background color of buttons on hover */
+  button:hover, button.active {
+    border-bottom-color: #00f;
+    color:black;
+  }
+
+  button:first-child {
+    margin-left:0;
+  }
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 0;
+  border-top: none;
+  animation: fadeEffect 0.5s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+/* END TABS */

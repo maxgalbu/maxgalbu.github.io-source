@@ -3,13 +3,13 @@ analytics-id: #leave blank to not use Analytics
 
 #Subtitle
 subtitle:
-  active: true
+  active: false
   text: Yet Another Minimal Theme
 
 #Nav 
 nav:
   pages:
-    active: true
+    active: false
   social:
     active: true
 
@@ -31,9 +31,9 @@ mathjax:
 
 #Show related posts based on categories
 related-posts:
-  active: true
+  active: false
   title: "You May Also Enjoy"
 
 #Disqus
 disqus:
-  disqus_shortname: "your_username" #Your disqus shortname. Leave blank to deactivate disqus comments
+  disqus_shortname: "maxgalbu" #Your disqus shortname. Leave blank to deactivate disqus comments

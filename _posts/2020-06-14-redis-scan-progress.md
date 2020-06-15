@@ -9,7 +9,7 @@ customexcerpt: "Does the SCAN cursor look like a random number? It is not."
 
 ## tl; dr
 
-The cursor is not a random number, but is actually a reverse-bitwise number that indicates the index on the hash table that represents the selected database. Given this, you can obtain the progress from the cursor!
+The cursor is not a random number, but is actually a reverse-bitwise number that indicates the index on a hash table, where redis stores the keys for each database. By reversing the cursor, you can see your progress while SCANning!
 
 See the code and comments below if you're in a hurry, or see the explanation below if you want more insights.
 
@@ -126,7 +126,7 @@ $hashTableSize = pow(2, $nextPowerOfTwo);
 So, in this case redis reserves a hash table as big as `2^8`, that is `256` or in binary `100000000`. As a result, the hash table of a 200 keys database goes from index `00000000` to index `100000000`. Once you use more or less keys than that, Redis will increase or decrease that power of 2, with a process called *rehashing*, see below for this topic. 
 
 
-Back to the cursor, what Redis does is take each cursor, reverse the binary value: by doing so it obtains an actual index, one that in our example is between `00000000` to index `100000000`. Starting from that index, Redis increase the index while looping over the hash table, until at least `COUNT` keys are found, then reverse the binary again, converting it to decimal and returning it to you. So for example, with the same database with 200 keys, `SCAN 0 COUNT 10` could follow this flow:
+Back to the cursor, what Redis does is take each cursor and reverse the binary value: by doing so it obtains an actual index, one that in our example is between `00000000` to index `100000000`. Starting from that index, Redis increase the index while looping over the hash table, until at least `COUNT` keys are found, then reverse the binary again, converting it to decimal and returning it to you. So for example, with the same database with 200 keys, `SCAN 0 COUNT 10` could follow this flow:
 
 ```
 COMMAND  BINARY     SWAPPED    NEW BIN   DECIMAL  SWAPPED   NEW CURSOR

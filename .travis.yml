@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+
+install:
+  - bundle install
+
+script:
+  - "./build.sh"
+
+env:
+  global:
+    secure: y21rK69nItjvdoSArPcEYAF8iKQTCh+U/DYIO6hJr+dk7UAUlpa9an6Hi1bNnCdaDqhtv2+HEdJTSMgo4vVba6tYFUecZMOOMJrQn6E3q7D97u9D71k9jpRy6qvjiW26h8hZTIiOYFol2oM44hctKwaxw6uQm7Eaij+zYmPhOljLrx48VuYCPeXA+7jqQpbmI4nF+DgU/j5mU2bYwbmHNHzYrD6MfujpYJrGDmmPTC1QyLu4NW66K4U2wvH8gBCNkFbvebk2P9LkRdN2GWN5kA08s4x8FMPXcGsVt9SbZlPwdP5M7sWApNM5MChe4tCfvelnUezW2ZDWsthoFuJxiaID6ke7SJYQqEAia7GA9jvc5AOHhJHN7V68Z02SSSssiy9i1/IoluHKvF5HqNwDfPRWzWoElCp7/Va/uqIYIFc6N7r6Adn9eSInd0lnba+2p3ac8hC/nTz2pi9jHR+Npn0Get3Jf3NGXqT+CqjaP5nbUINMa1VmD/6Kg0ZexEy/tJ/YqezdvSVUR88EHY+Bb9trGfM36E9Lj9lqMyx7IIbq5ZjvODIlsQmv1uIiusElhPgT65IE/hekqJUW1/VDTpcnaid/ydDZqcqp/EbAvLJCVvWKZO3nq/KtzZq9cDne0giWCpXNuPHgG+nn2JuEIg1KPD9o9sCRkUEoLpOqm0g=

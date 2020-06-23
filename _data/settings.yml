@@ -9,7 +9,7 @@ subtitle:
 #Nav 
 nav:
   pages:
-    active: false
+    active: true
   social:
     active: true
 
